@@ -80,7 +80,7 @@ app.post('/detect', authenticate, async (req, res) => {
 });
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', authenticate, (req, res) => {
     res.json({ status: 'ok', modelLoaded: model !== null });
 });
 

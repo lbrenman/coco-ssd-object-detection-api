@@ -50,3 +50,40 @@ with Response:
     ]
 }
 ```
+
+## Other Responses
+
+500
+{
+  "error": "Model not loaded yet"
+}
+
+{
+  "error": "Error processing image"
+}
+
+400
+{
+  "error": "No image provided"
+}
+
+{
+  "error": "Invalid base64 image data"
+}
+
+## Health Check
+
+```bash
+curl --location 'http://localhost:3000/health' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {{YOUR API KEY}}'
+```
+
+with response:
+
+```json
+{
+    "status": "ok",
+    "modelLoaded": true
+}
+```
